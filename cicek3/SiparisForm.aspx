@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <i class="fa fa-sticky-note"></i>
-    Sipariş Ekle/deneme
+    Sipariş Ekle/deneme(çok güzel afereim oldu galiba mertaltun yazdı)
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
