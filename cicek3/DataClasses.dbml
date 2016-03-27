@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FLUERİSTE" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-NOV0Q4I;Initial Catalog=FLUERİSTE;Persist Security Info=True;User ID=mrtalt" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FLUERİSTEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Urunler" Member="Urunlers">
+    <Type Name="Urunler">
+      <Column Name="Urun_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fiyat" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Eklenme_Tarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OzelNot" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Kategori_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategori" Member="Kategoris">
+    <Type Name="Kategori">
+      <Column Name="Kategori_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_EkleLog" Method="usp_EkleLog">
+    <Parameter Name="KULLANICI_ID" Parameter="kULLANICI_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MESAJ" Parameter="mESAJ" Type="System.String" DbType="NText" />
+    <Parameter Name="IP" Parameter="iP" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="PAGE" Parameter="pAGE" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="STACKTRACE" Parameter="sTACKTRACE" Type="System.String" DbType="NText" />
+    <Parameter Name="KAYNAGI" Parameter="kAYNAGI" Type="System.String" DbType="NText" />
+    <Parameter Name="OLUSMA_ZAMANI" Parameter="oLUSMA_ZAMANI" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_SiparisIstatistik" Method="usp_SiparisIstatistik">
+    <Parameter Name="Durum" Parameter="durum" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="usp_SiparisIstatistikResult">
+      <Column Name="sayisi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UyariListele" Method="usp_UyariListele">
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_UyariListeleResult">
+      <Column Name="Tur" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="adSoyad" Type="System.String" DbType="NVarChar(41)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UyariEtkilesim" Method="usp_UyariEtkilesim">
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_UyariEtkilesimResult">
+      <Column Name="Tur" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="adSoyad" Type="System.String" DbType="NVarChar(41)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserGetir" Method="usp_UserGetir">
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_UserGetirResult">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Soyad" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TcNo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="VergiNo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Il" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="FirmaTur_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UyelikBaslangicTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UyelikBitisTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserGetirTumu" Method="usp_UserGetirTumu">
+    <ElementType Name="usp_UserGetirTumuResult">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Soyad" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TcNo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="VergiNo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Il" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="TurAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Resim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UyelikBaslangicTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UyelikBitisTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FirmaTurAdlariGetir" Method="usp_FirmaTurAdlariGetir">
+    <ElementType Name="usp_FirmaTurAdlariGetirResult">
+      <Column Name="FirmaTur_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TurAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FirmaTurEkle" Method="usp_FirmaTurEkle">
+    <Parameter Name="TurAdi" Parameter="turAdi" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UserEkle" Method="usp_UserEkle">
+    <Parameter Name="KullaniciAdi" Parameter="kullaniciAdi" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Sifre" Parameter="sifre" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="Ad" Parameter="ad" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Soyad" Parameter="soyad" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TcNo" Parameter="tcNo" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="VergiNo" Parameter="vergiNo" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="Telefon" Parameter="telefon" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="Mail" Parameter="mail" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Il" Parameter="il" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Adres" Parameter="adres" Type="System.String" DbType="NVarChar(80)" />
+    <Parameter Name="FirmaTur_Id" Parameter="firmaTur_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Resim" Parameter="resim" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UyelikBaslangicTarihi" Parameter="uyelikBaslangicTarihi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UyelikBitisTarihi" Parameter="uyelikBitisTarihi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_EtkilesimListele" Method="usp_EtkilesimListele">
+    <ElementType Name="usp_EtkilesimListeleResult">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Il" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Resim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TurAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserSil" Method="usp_UserSil">
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UserGuncelle" Method="usp_UserGuncelle">
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KullaniciAdi" Parameter="kullaniciAdi" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Sifre" Parameter="sifre" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="Ad" Parameter="ad" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Soyad" Parameter="soyad" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TcNo" Parameter="tcNo" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="VergiNo" Parameter="vergiNo" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="Telefon" Parameter="telefon" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="Mail" Parameter="mail" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Il" Parameter="il" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Adres" Parameter="adres" Type="System.String" DbType="NVarChar(80)" />
+    <Parameter Name="FirmaTur_Id" Parameter="firmaTur_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Resim" Parameter="resim" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UyelikBitisTarihi" Parameter="uyelikBitisTarihi" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fnc_UserLogin" Method="fnc_UserLogin" IsComposable="true">
+    <Parameter Name="KullaniciAdi" Parameter="kullaniciAdi" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Sifre" Parameter="sifre" Type="System.String" DbType="NVarChar(12)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UrunEkleme" Method="usp_UrunEkleme">
+    <Parameter Name="user_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Urun_Id" Parameter="urun_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ad" Parameter="ad" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fiyat" Parameter="fiyat" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Eklenme_Tarihi" Parameter="eklenme_Tarihi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OzelNot" Parameter="ozelNot" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Kategori_Id" Parameter="kategori_Id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UrunGuncelle" Method="usp_UrunGuncelle">
+    <Parameter Name="Ad" Parameter="ad" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fiyat" Parameter="fiyat" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Eklenme_Tarihi" Parameter="eklenme_Tarihi" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OzelNot" Parameter="ozelNot" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Kategori_Id" Parameter="kategori_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_Id" Parameter="user_Id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UrunSil" Method="usp_UrunSil">
+    <Parameter Name="urun_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user_Id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UrunleriGetir" Method="usp_UrunleriGetir">
+    <Parameter Name="user_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_UrunleriGetirResult">
+      <Column Name="Urun_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fiyat" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Eklenme_Tarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="kad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kategori_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OzelNot" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_KategorileriGetir" Method="usp_KategorileriGetir">
+    <Parameter Name="user_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_KategorileriGetirResult">
+      <Column Name="Kategori_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fnc_UserMailKontrol" Method="fnc_UserMailKontrol" IsComposable="true">
+    <Parameter Name="Mail" Parameter="mail" Type="System.String" DbType="NVarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
