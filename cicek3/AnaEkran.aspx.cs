@@ -37,7 +37,10 @@ namespace cicek3
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+          //deneme amaclı yazdım bunu
+
         }
+
 
         //protected void btn1_ServerClick(object sender, EventArgs e)
         //{

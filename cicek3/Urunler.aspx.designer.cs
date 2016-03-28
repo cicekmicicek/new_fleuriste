@@ -85,24 +85,6 @@ namespace cicek3 {
         protected global::System.Web.UI.WebControls.Button btn_urunEkle;
         
         /// <summary>
-        /// txt_urunSil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_urunSil;
-        
-        /// <summary>
-        /// btn_UrunSil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_UrunSil;
-        
-        /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +94,13 @@ namespace cicek3 {
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// txtGuncelle_urunId control.
+        /// txtGuncelle_UrunId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGuncelle_urunId;
+        protected global::System.Web.UI.WebControls.TextBox txtGuncelle_UrunId;
         
         /// <summary>
         /// btn_UrunBul control.
@@ -164,6 +146,15 @@ namespace cicek3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGuncelle_ozelnot;
+        
+        /// <summary>
+        /// drpGuncelle_kategoriler control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpGuncelle_kategoriler;
         
         /// <summary>
         /// btn_urunGuncelle control.
